@@ -27,12 +27,14 @@ git branch -M main
 git push -u origin main
 ```
 
-### 3. Enable GitHub Pages
+### 3. Enable GitHub Pages (CRITICAL!)
 
 1. Go to your repository on GitHub: `https://github.com/YOUR_USERNAME/goldmine_multitrade_masterbatch`
 2. Click **Settings** tab
 3. Click **Pages** in the left sidebar
-4. Under **Source**, select **GitHub Actions**
+4. Under **Build and deployment** → **Source**, select **GitHub Actions** (NOT "Deploy from a branch")
+   - ⚠️ This is CRITICAL! If you see "Deploy from a branch", change it to "GitHub Actions"
+   - This ensures the Astro build workflow runs instead of Jekyll
 5. The workflow will automatically run and deploy your site
 
 ### 4. Access Your Site
@@ -58,12 +60,18 @@ https://YOUR_USERNAME.github.io/goldmine_multitrade_masterbatch/
 
 ## Troubleshooting
 
+### If you see "Jekyll" errors:
+- **Problem**: GitHub Pages is trying to use Jekyll instead of Astro
+- **Solution**: Go to Settings → Pages and change Source from "Deploy from a branch" to "GitHub Actions"
+- The `.nojekyll` file in `public/` also prevents Jekyll from running
+
 ### If deployment fails:
 1. Check the Actions tab in your GitHub repository
 2. Look at the error logs
 3. Common issues:
    - Node modules issues: Delete `node_modules` and `package-lock.json`, then `npm install`
    - Permissions: Make sure GitHub Actions has write permissions in Settings → Actions → General
+   - Wrong build source: Make sure Pages source is set to "GitHub Actions" not "Deploy from a branch"
 
 ### If styles don't load:
 - Make sure the `site` and `base` in `astro.config.mjs` match your GitHub username and repo name
