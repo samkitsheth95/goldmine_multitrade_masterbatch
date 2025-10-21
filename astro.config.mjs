@@ -4,6 +4,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://samkit.sheth.github.io',
+  base: '/goldmine_multitrade_masterbatch',
   integrations: [
     tailwind({
       applyBaseStyles: false,
