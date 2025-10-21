@@ -34,7 +34,7 @@ const {
         )}
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-          {title.split(' ').map((word, i) => 
+          {title.split(' ').map((word) => 
             word.toLowerCase().includes('gold') ? 
             <span class="text-gradient">{word} </span> : 
             <span>{word} </span>
