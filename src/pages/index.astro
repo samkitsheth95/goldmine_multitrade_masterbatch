@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Goldmine Masterbatch - Premium Polymer Solutions">
@@ -15,7 +17,7 @@ import Footer from '../components/Footer.astro';
     ctaText="Request Sample"
     ctaLink="#contact"
     ctaText2="View Products"
-    ctaLink2="/products"
+    ctaLink2={`${base}products`}
   />
 
   <!-- Features Grid -->
@@ -131,7 +133,7 @@ import Footer from '../components/Footer.astro';
         <a href="#contact" class="btn btn-lg bg-white text-primary hover:bg-base-200">
           Request Sample
         </a>
-        <a href="/products" class="btn btn-lg btn-outline text-white border-white hover:bg-white/10">
+        <a href={`${base}products`} class="btn btn-lg btn-outline text-white border-white hover:bg-white/10">
           View Products
         </a>
       </div>

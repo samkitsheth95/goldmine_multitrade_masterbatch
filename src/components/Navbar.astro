@@ -1,21 +1,23 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const navItems = [
-  { name: 'Home', href: '/' },
+  { name: 'Home', href: `${base}` },
   { 
     name: 'Products', 
-    href: '/products',
+    href: `${base}products`,
     submenu: [
-      { name: 'White Masterbatch', href: '/products/white' },
-      { name: 'Black Masterbatch', href: '/products/black' },
-      { name: 'Color Masterbatch', href: '/products/color' },
-      { name: 'Additive Masterbatch', href: '/products/additive' },
-      { name: 'Filler Masterbatch', href: '/products/filler' },
+      { name: 'White Masterbatch', href: `${base}products/white` },
+      { name: 'Black Masterbatch', href: `${base}products/black` },
+      { name: 'Color Masterbatch', href: `${base}products/color` },
+      { name: 'Additive Masterbatch', href: `${base}products/additive` },
+      { name: 'Filler Masterbatch', href: `${base}products/filler` },
     ]
   },
-  { name: 'Applications', href: '/applications' },
-  { name: 'Innovation', href: '/innovation' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Applications', href: `${base}applications` },
+  { name: 'Innovation', href: `${base}innovation` },
+  { name: 'About', href: `${base}about` },
+  { name: 'Contact', href: `${base}contact` },
 ];
 ---
 
@@ -48,7 +50,7 @@ const navItems = [
         </ul>
       </div>
       
-      <a href="/" class="flex items-center gap-3 px-2">
+      <a href={base} class="flex items-center gap-3 px-2">
         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
           <span class="text-white font-bold text-xl">G</span>
         </div>
