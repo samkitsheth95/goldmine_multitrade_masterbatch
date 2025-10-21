@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const products = [
+  {
+    name: 'White Masterbatch',
+    slug: 'white',
+    icon: '⚪',
+    description: 'Premium quality white masterbatch for exceptional opacity and brightness in polymer applications.',
+    features: [
+      'High TiO₂ content for superior whiteness',
+      'Excellent dispersion properties',
+      'Compatible with PP, PE, and other polymers',
+      'Cost-effective titanium dioxide carrier',
+      'Consistent color across batches'
+    ],
+    applications: ['Film extrusion', 'Injection molding', 'Blow molding', 'Raffia & tape', 'Non-woven fabrics']
+  },
+  {
+    name: 'Black Masterbatch',
+    slug: 'black',
+    icon: '⚫',
+    description: 'High-performance black masterbatch offering excellent UV protection and deep black color intensity.',
+    features: [
+      'Superior UV stabilization',
+      'High carbon black content',
+      'Excellent weathering resistance',
+      'Cost-effective pigment solution',
+      'Consistent jet-black appearance'
+    ],
+    applications: ['Agricultural films', 'Pipes and fittings', 'Cable insulation', 'Automotive parts', 'Outdoor furniture']
+  },
+  {
+    name: 'Color Masterbatch',
+    slug: 'color',
+    icon: '🎨',
+    description: 'Vibrant custom color masterbatches formulated to match your exact specifications and brand requirements.',
+    features: [
+      '500+ custom color formulations',
+      'Brand color matching (Pantone, RAL)',
+      'Heat and light stability',
+      'FDA compliant options available',
+      'Special effects (metallic, pearlescent)'
+    ],
+    applications: ['Packaging films', 'Consumer goods', 'Toys and games', 'Household products', 'Industrial components']
+  },
+  {
+    name: 'Additive Masterbatch',
+    slug: 'additive',
+    icon: '⚗️',
+    description: 'Specialized additive masterbatches to enhance polymer performance with specific functional properties.',
+    features: [
+      'UV stabilizers for outdoor durability',
+      'Anti-static and anti-fog additives',
+      'Slip and anti-block agents',
+      'Flame retardants',
+      'Processing aids and nucleating agents'
+    ],
+    applications: ['Agricultural films', 'Greenhouse covers', 'Food packaging', 'Electrical applications', 'Technical moldings']
+  },
+  {
+    name: 'Filler Masterbatch',
+    slug: 'filler',
+    icon: '📦',
+    description: 'Cost-effective filler masterbatches that reduce material costs while maintaining product performance.',
+    features: [
+      'High CaCO₃ loading',
+      'Improved mechanical properties',
+      'Enhanced surface finish',
+      'Reduced cycle time',
+      'Cost optimization solution'
+    ],
+    applications: ['Shopping bags', 'Garbage bags', 'Industrial packaging', 'Injection molded products', 'Sheet extrusion']
+  }
+];
+---
+
+<Layout title="Products - Goldmine Masterbatch">
+  <Navbar />
+  
+  <!-- Hero Section -->
+  <section class="hero min-h-[50vh] bg-gradient-to-br from-primary/20 to-accent/20">
+    <div class="hero-content text-center">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Our <span class="text-gradient">Product Range</span>
+        </h1>
+        <p class="text-xl text-base-content/80">
+          Comprehensive masterbatch solutions engineered for performance, consistency, and sustainability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="py-24 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {products.map(product => (
+          <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="card-body">
+              <div class="text-5xl mb-4">{product.icon}</div>
+              <h2 class="card-title text-2xl">{product.name}</h2>
+              <p class="text-base-content/80 mb-4">{product.description}</p>
+              
+              <div class="divider"></div>
+              
+              <h3 class="font-semibold text-lg mb-2">Key Features:</h3>
+              <ul class="space-y-2 mb-4">
+                {product.features.map(feature => (
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <h3 class="font-semibold text-lg mb-2">Applications:</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {product.applications.map(app => (
+                  <div class="badge badge-outline badge-sm">{app}</div>
+                ))}
+              </div>
+              
+              <div class="card-actions justify-end mt-4">
+                <a href={`/products/${product.slug}`} class="btn btn-primary btn-sm text-white">
+                  Learn More
+                </a>
+                <a href="#contact-form" class="btn btn-outline btn-sm">
+                  Get Sample
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Need a Custom Formulation?
+      </h2>
+      <p class="text-xl text-white/90 mb-8">Our R&D team can create the perfect masterbatch for your specific needs.</p>
+      <a href="/#contact-form" class="btn btn-secondary btn-lg text-white">
+        Contact Our Experts
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+

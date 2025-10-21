@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const applications = [
+  {
+    name: 'Packaging Films',
+    icon: '📦',
+    description: 'Flexible packaging solutions for food, industrial, and consumer goods',
+    products: ['Color Masterbatch', 'White Masterbatch', 'Additive Masterbatch'],
+    benefits: ['Enhanced shelf appeal', 'Superior barrier properties', 'FDA compliant options']
+  },
+  {
+    name: 'Agricultural Films',
+    icon: '🌾',
+    description: 'UV-stabilized films for greenhouse, mulch, and silage applications',
+    products: ['Black Masterbatch', 'Additive Masterbatch'],
+    benefits: ['Long-term UV protection', 'Weather resistance', 'Extended lifespan']
+  },
+  {
+    name: 'Non-Woven Fabrics',
+    icon: '🏥',
+    description: 'Medical textiles, hygiene products, and technical fabrics',
+    products: ['White Masterbatch', 'Color Masterbatch'],
+    benefits: ['High brightness', 'Consistent color', 'Excellent spinnability']
+  },
+  {
+    name: 'Pipes & Fittings',
+    icon: '🔧',
+    description: 'Durable piping systems for water, gas, and industrial applications',
+    products: ['Black Masterbatch', 'Color Masterbatch'],
+    benefits: ['UV stability', 'Chemical resistance', 'Long service life']
+  },
+  {
+    name: 'Injection Molding',
+    icon: '🏭',
+    description: 'Consumer goods, automotive parts, and industrial components',
+    products: ['All Masterbatch Types'],
+    benefits: ['Excellent dispersion', 'Fast cycle times', 'Consistent quality']
+  },
+  {
+    name: 'Blow Molding',
+    icon: '🧴',
+    description: 'Bottles, containers, and hollow products',
+    products: ['White Masterbatch', 'Color Masterbatch'],
+    benefits: ['Uniform wall thickness', 'Excellent opacity', 'FDA approved options']
+  },
+  {
+    name: 'Raffia & Tape',
+    icon: '🎀',
+    description: 'Woven sacks, industrial bags, and strapping tape',
+    products: ['Filler Masterbatch', 'Color Masterbatch'],
+    benefits: ['Cost optimization', 'Enhanced tensile strength', 'Consistent color']
+  },
+  {
+    name: 'Cable & Wire',
+    icon: '⚡',
+    description: 'Electrical insulation and cable jacketing',
+    products: ['Black Masterbatch', 'Additive Masterbatch'],
+    benefits: ['Electrical properties', 'Flame retardancy', 'UV protection']
+  }
+];
+---
+
+<Layout title="Applications - Goldmine Masterbatch">
+  <Navbar />
+  
+  <!-- Hero Section -->
+  <section class="hero min-h-[50vh] bg-gradient-to-br from-primary/20 to-accent/20">
+    <div class="hero-content text-center">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          <span class="text-gradient">Applications</span>
+        </h1>
+        <p class="text-xl text-base-content/80">
+          Powering diverse industries with precision-engineered masterbatch solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Grid -->
+  <section class="py-24 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {applications.map(app => (
+          <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="card-body">
+              <div class="text-5xl mb-4">{app.icon}</div>
+              <h2 class="card-title text-2xl">{app.name}</h2>
+              <p class="text-base-content/80 mb-4">{app.description}</p>
+              
+              <div class="divider"></div>
+              
+              <h3 class="font-semibold mb-2">Recommended Products:</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {app.products.map(product => (
+                  <div class="badge badge-primary text-white badge-sm">{product}</div>
+                ))}
+              </div>
+              
+              <h3 class="font-semibold mb-2">Key Benefits:</h3>
+              <ul class="space-y-2">
+                {app.benefits.map(benefit => (
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-success flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-sm">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Solutions -->
+  <section class="py-24 bg-base-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Tailored Solutions for Every Industry</h2>
+        <p class="text-xl text-base-content/70">Custom formulations matched to your specific requirements</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4">Custom Color Matching</h3>
+            <p class="text-base-content/80 mb-4">
+              Match any brand color from Pantone, RAL, or custom samples. Our spectrophotometer ensures perfect color accuracy every time.
+            </p>
+            <div class="badge badge-accent text-white">500+ formulations available</div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4">FDA Compliance</h3>
+            <p class="text-base-content/80 mb-4">
+              Food-grade masterbatches that meet FDA and EU regulations for direct and indirect food contact applications.
+            </p>
+            <div class="badge badge-success text-white">Certified & tested</div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4">Technical Support</h3>
+            <p class="text-base-content/80 mb-4">
+              Our application lab helps optimize dosage, processing parameters, and troubleshoot any production challenges.
+            </p>
+            <div class="badge badge-info text-white">Expert assistance</div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4">Rapid Prototyping</h3>
+            <p class="text-base-content/80 mb-4">
+              Get custom samples within 72 hours. Test before committing to full-scale production.
+            </p>
+            <div class="badge badge-primary text-white">72-hour turnaround</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold text-white mb-6">
+        Need a Solution for Your Application?
+      </h2>
+      <p class="text-xl text-white/90 mb-8">Let's discuss how our masterbatches can enhance your products</p>
+      <a href="/#contact-form" class="btn btn-secondary btn-lg text-white">
+        Contact Our Team
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+

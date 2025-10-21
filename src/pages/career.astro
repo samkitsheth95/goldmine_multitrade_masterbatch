@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const openPositions = [
+  {
+    title: 'Production Manager',
+    department: 'Manufacturing',
+    location: 'Main Facility',
+    type: 'Full-time',
+    description: 'Oversee production operations and ensure quality standards are met consistently.'
+  },
+  {
+    title: 'R&D Chemist',
+    department: 'Research & Development',
+    location: 'Innovation Lab',
+    type: 'Full-time',
+    description: 'Develop new masterbatch formulations and optimize existing products.'
+  },
+  {
+    title: 'Quality Control Analyst',
+    department: 'Quality Assurance',
+    location: 'Testing Lab',
+    type: 'Full-time',
+    description: 'Conduct quality tests and ensure all products meet international standards.'
+  },
+  {
+    title: 'Sales Executive',
+    department: 'Sales & Marketing',
+    location: 'Multiple Locations',
+    type: 'Full-time',
+    description: 'Build relationships with clients and expand our market presence.'
+  },
+  {
+    title: 'Technical Support Engineer',
+    department: 'Customer Support',
+    location: 'Main Facility',
+    type: 'Full-time',
+    description: 'Provide technical assistance to clients and troubleshoot application issues.'
+  }
+];
+---
+
+<Layout title="Career - Join Goldmine Masterbatch">
+  <Navbar />
+  
+  <!-- Hero Section -->
+  <section class="hero min-h-[50vh] bg-gradient-to-br from-primary/20 to-accent/20">
+    <div class="hero-content text-center">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Build Your <span class="text-gradient">Career</span> with Us
+        </h1>
+        <p class="text-xl text-base-content/80">
+          Join a team that's transforming the polymer industry with innovation, integrity, and excellence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Us -->
+  <section class="py-24 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Why Join Goldmine?</h2>
+        <p class="text-xl text-base-content/70">More than just a job — it's a career with purpose</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body items-center text-center">
+            <div class="text-5xl mb-4">🚀</div>
+            <h3 class="card-title text-xl mb-3">Growth Opportunities</h3>
+            <p class="text-base-content/80">
+              Continuous learning and advancement in a rapidly growing company serving 25+ countries.
+            </p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body items-center text-center">
+            <div class="text-5xl mb-4">🔬</div>
+            <h3 class="card-title text-xl mb-3">Innovation Culture</h3>
+            <p class="text-base-content/80">
+              Work with cutting-edge technology and contribute to groundbreaking formulations.
+            </p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body items-center text-center">
+            <div class="text-5xl mb-4">🤝</div>
+            <h3 class="card-title text-xl mb-3">Collaborative Team</h3>
+            <p class="text-base-content/80">
+              Be part of a supportive team that values integrity, transparency, and excellence.
+            </p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body items-center text-center">
+            <div class="text-5xl mb-4">💼</div>
+            <h3 class="card-title text-xl mb-3">Competitive Benefits</h3>
+            <p class="text-base-content/80">
+              Attractive compensation packages, health benefits, and performance incentives.
+            </p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body items-center text-center">
+            <div class="text-5xl mb-4">🌱</div>
+            <h3 class="card-title text-xl mb-3">Sustainable Mission</h3>
+            <p class="text-base-content/80">
+              Contribute to eco-friendly manufacturing with our solar-powered operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body items-center text-center">
+            <div class="text-5xl mb-4">🌍</div>
+            <h3 class="card-title text-xl mb-3">Global Impact</h3>
+            <p class="text-base-content/80">
+              Your work reaches industries worldwide, making a real difference.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Positions -->
+  <section class="py-24 bg-base-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Current Openings</h2>
+        <p class="text-xl text-base-content/70">Find your perfect role at Goldmine</p>
+      </div>
+
+      <div class="space-y-6 max-w-5xl mx-auto">
+        {openPositions.map(position => (
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="card-body">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="card-title text-2xl mb-2">{position.title}</h3>
+                  <p class="text-base-content/80 mb-4">{position.description}</p>
+                  <div class="flex flex-wrap gap-2">
+                    <div class="badge badge-primary">{position.department}</div>
+                    <div class="badge badge-outline">{position.location}</div>
+                    <div class="badge badge-accent">{position.type}</div>
+                  </div>
+                </div>
+                <div class="card-actions">
+                  <a href="#apply-form" class="btn btn-primary text-white">
+                    Apply Now
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-lg text-base-content/70 mb-4">Don't see the right role?</p>
+        <a href="#apply-form" class="btn btn-outline btn-lg">Send Us Your Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section id="apply-form" class="py-24 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Apply for a Position</h2>
+          <p class="text-xl text-base-content/70">Take the first step towards joining our team</p>
+        </div>
+
+        <form class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">First Name *</span>
+                </label>
+                <input type="text" placeholder="John" class="input input-bordered" required />
+              </div>
+
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Last Name *</span>
+                </label>
+                <input type="text" placeholder="Doe" class="input input-bordered" required />
+              </div>
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Email *</span>
+              </label>
+              <input type="email" placeholder="john.doe@example.com" class="input input-bordered" required />
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Phone *</span>
+              </label>
+              <input type="tel" placeholder="+1 234 567 8900" class="input input-bordered" required />
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Position Applying For *</span>
+              </label>
+              <select class="select select-bordered" required>
+                <option disabled selected>Select a position</option>
+                {openPositions.map(position => (
+                  <option>{position.title}</option>
+                ))}
+                <option>Other / General Application</option>
+              </select>
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">LinkedIn Profile (optional)</span>
+              </label>
+              <input type="url" placeholder="https://linkedin.com/in/yourprofile" class="input input-bordered" />
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Resume / CV *</span>
+              </label>
+              <input type="file" class="file-input file-input-bordered w-full" accept=".pdf,.doc,.docx" required />
+              <label class="label">
+                <span class="label-text-alt">Accepted formats: PDF, DOC, DOCX (Max 5MB)</span>
+              </label>
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Cover Letter (optional)</span>
+              </label>
+              <textarea class="textarea textarea-bordered h-32" placeholder="Tell us why you'd be a great fit for Goldmine..."></textarea>
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Years of Experience *</span>
+              </label>
+              <select class="select select-bordered" required>
+                <option disabled selected>Select experience level</option>
+                <option>0-1 years</option>
+                <option>1-3 years</option>
+                <option>3-5 years</option>
+                <option>5-10 years</option>
+                <option>10+ years</option>
+              </select>
+            </div>
+
+            <div class="form-control mt-6">
+              <button type="submit" class="btn btn-primary text-white btn-lg">
+                Submit Application
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="text-sm text-center text-base-content/60 mt-4">
+              By submitting this form, you agree to our privacy policy and consent to being contacted regarding your application.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture Section -->
+  <section class="py-24 bg-gradient-to-br from-secondary to-neutral text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Our Culture</h2>
+        <blockquote class="text-2xl leading-relaxed mb-8">
+          "At Goldmine, we don't just manufacture masterbatches — we cultivate talent, foster innovation, and build careers that matter. Join us in transforming the polymer industry."
+        </blockquote>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="badge badge-primary badge-lg">Innovation</div>
+          <div class="badge badge-accent badge-lg">Integrity</div>
+          <div class="badge badge-success badge-lg">Excellence</div>
+          <div class="badge badge-info badge-lg">Sustainability</div>
+          <div class="badge badge-warning badge-lg">Collaboration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+

@@ -1,0 +1,23 @@
+{
+  "name": "goldmine-masterbatch",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Modern website for Goldmine Masterbatch built with Astro and DaisyUI",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^5.1.7",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "daisyui": "^4.12.14"
+  }
+}
